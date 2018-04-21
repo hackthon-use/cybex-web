@@ -131,7 +131,7 @@ class KycResult extends React.Component {
         ZfApi.publish("bindIdModal", "close");
         AccountActions.transfer(
             currentAccount,
-            "1.2.1747", // Validator's Account
+            "1.2.11904", // Validator's Account
             1000,
             "1.3.0",
             this.state.memo,
@@ -165,11 +165,11 @@ class KycResult extends React.Component {
                 if(op[0]==0){
                     let info = op[1];
                     // Hard code to bind etherum Address
-                    if(info.to == "1.2.1747" &&(info.memo && info.memo.message) && (info.amount&&info.amount.amount==1000 && info.amount.asset_id=="1.3.0")){
+                    if(info.to == "1.2.11904" &&(info.memo && info.memo.message) && (info.amount&&info.amount.amount==1000 && info.amount.asset_id=="1.3.0")){
                         isBinded = true
                     }
                     // Hard code to verify if the KYC passed
-                    if(info.from == "1.2.1747" && (info.amount&&info.amount.amount==1000 && info.amount.asset_id=="1.3.0")){
+                    if(info.from == "1.2.11904" && (info.amount&&info.amount.amount==1000 && info.amount.asset_id=="1.3.0")){
                         isKYCed = true
                     }
                 }
