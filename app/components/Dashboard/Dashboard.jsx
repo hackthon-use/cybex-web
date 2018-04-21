@@ -2,6 +2,7 @@ import React from "react";
 import Immutable from "immutable";
 import DashboardList from "./DashboardList";
 import { RecentTransactions } from "../Account/RecentTransactions";
+import { KycResult } from "../Account/KycResult";
 import Translate from "react-translate-component";
 import MarketCard from "./MarketCard";
 import utils from "common/utils";
@@ -252,7 +253,14 @@ class Dashboard extends React.Component {
                             {/* {showIgnored ? <DashboardList accounts={Immutable.List(ignored)} width={width} /> : null} */}
                         </div>
                     </div> : null}
-
+                    {accountCount ? <KycResult
+                        style={{ marginBottom: 20, marginTop: 20 }}
+                        accountsList={linkedAccounts}
+                        limit={10}
+                        compactView={false}
+                        fullHeight={true}
+                        showFilters={true}
+                    /> : null}
                     {accountCount ? <RecentTransactions
                         style={{ marginBottom: 20, marginTop: 20 }}
                         accountsList={linkedAccounts}
